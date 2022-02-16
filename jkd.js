@@ -1,15 +1,15 @@
 /*
 下载地址
-http://a.app.qq.com/o/simple.jsp?pkgname=com.xiangzi.jukandian&ckey=CK1416436838701
-邀请码必填得金币 24493019
+https://a.app.qq.com/o/simple.jsp?ctx=1644980653513&pkgname=com.xiangzi.jukandian&ckey=CK1416436838701
+邀请码必填得金币 24569843
 [rewrite_local]
-https://www.xiaodouzhuan.cn/jkd/user/userlive.action url script-request-body http://47.101.146.160/scripts/jkd.js
+https://www.xiaodouzhuan.cn/jkd/user/userlive.action url script-request-body https://github.com/dcs1024/Script/edit/Pv/raw_scripts_jkd.js
 
 hostname = *.xiaodouzhuan.cn
 ##点任务获取数据##
 ===========ql===========
 拉取
-ql raw http://47.101.146.160/scripts/jkd.js
+ql raw https://github.com/dcs1024/Script/edit/Pv/raw_scripts_jkd.js
 变量
 export jkdhd='{"openid": "替换的CK"}' 同CK 后面不需要!iOS!5.6.5
 
@@ -18,7 +18,7 @@ export jkdck='{"Cookie":"xz_jkd_appkey=替换的CK"}'
 多账号用@隔开
 */
 // [task_local]
-// */60 * * * * http://47.101.146.160/scripts/jkd.js, tag=聚看点, img-url=circles.hexagongrid.fill.system, enabled=true
+// */60 * * * * https://github.com/dcs1024/Script/edit/Pv/raw_scripts_jkd.js, tag=聚看点, img-url=circles.hexagongrid.fill.system, enabled=true
 
 const $ = new Env('聚看点');
 let status;
@@ -183,7 +183,7 @@ qlhd = JSON.parse(jkdhd)
 
     let nm = {
      url: `https://www.xiaodouzhuan.cn/jkd/user/bindTeacher.action`,
-     body: `jsondata={  "openid" : "${qlhd.openid}",  "os" : "iOS",  "psign" : "0cf94b87f584dfc81a87fa74dcb3757f",  "channel" : "IOS-qianzhuan",  "appversioncode" : "6006",  "time" : "1641268716",  "appversion" : "60.0.6",  "apptoken" : "xzwltoken070704",  "appid" : "xzwl",  "upUsercode" : "24493019"}`,
+     body: `jsondata={  "openid" : "${qlhd.openid}",  "os" : "iOS",  "psign" : "0cf94b87f584dfc81a87fa74dcb3757f",  "channel" : "IOS-qianzhuan",  "appversioncode" : "6006",  "time" : "1641268716",  "appversion" : "60.0.6",  "apptoken" : "xzwltoken070704",  "appid" : "xzwl",  "upUsercode" : "24569843"}`,
      headers:{
 'Host': 'www.xiaodouzhuan.cn',
 'Content-Type': 'application/x-www-form-urlencoded',
